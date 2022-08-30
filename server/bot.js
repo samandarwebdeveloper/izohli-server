@@ -60,14 +60,14 @@ module.exports = {
                         console.log(err)
                     } else {
                         if (row) {
-                            function sendMsg() {
-                                for (i = 0; i < row.length; i++) {
-                                    // if (i = 20) {
-                                    //     setTimeout(() => {
-                                    //         sendMsg();
-                                    //     }, 60000)
-                                    //     break;
-                                    // }
+                            function sendMsg(startIndex) {
+                                for (i = startIndex || 0; i < row.length; i++) {
+                                    if (i === 20) {
+                                        setTimeout(() => {
+                                            sendMsg(i);
+                                        }, 60000)
+                                        break;
+                                    }
                                     if (message.photo && message.caption) {
                                         bot.sendMediaGroup(row[i].chatId, [{
                                             type: 'photo',
@@ -86,7 +86,7 @@ module.exports = {
                                     }
                                 }
                             }
-                            sendMsg();
+                            sendMsg(0);
                         }
                     }
                 })
