@@ -13,6 +13,7 @@ let isSearch = true
 let message
 
 
+// host name
 const url = 'https://sammy.uz';
 const options = {
     polling: true
