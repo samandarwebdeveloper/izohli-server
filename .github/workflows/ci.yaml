@@ -1,4 +1,4 @@
-name: Izohli bot
+name: Izohli bot CI
 
 on:
   push:
