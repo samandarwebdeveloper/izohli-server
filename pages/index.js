@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Dashboard</title>
-        <meta name="description" content="Izohli bot dashboard" />
+        <meta name="description" content="Izohli bot" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
