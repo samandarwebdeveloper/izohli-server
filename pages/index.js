@@ -1,6 +1,7 @@
 import Head from 'next/head'
-
-export default function Home() {
+import { useRouter } from 'next/router'
+function Home({ ctx }) {
+  
   return (
     <div>
       <Head>
@@ -14,3 +15,16 @@ export default function Home() {
     </div>
   )
 }
+
+
+Home.getInitialProps = ctx => {
+  // We check for ctx.res to make sure we're on the server.
+  if (ctx.res) {
+    ctx.res.writeHead(302, { Location: '/login' });
+    ctx.res.end();
+  }
+  return { };
+}
+
+
+export default Home

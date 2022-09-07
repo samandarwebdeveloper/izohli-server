@@ -156,7 +156,7 @@ module.exports = {
                 }
             })
 
-            if (text !== '📋Xabar yuborish' && stepMessage === 1) {
+            if (text !== '📋Xabar yuborish' && stepMessage === 1 && chatId > 0) {
                 message = msg
                 if (msg.photo && msg.caption) {
                     bot.sendMediaGroup(chatId, [{

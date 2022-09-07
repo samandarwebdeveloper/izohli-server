@@ -1,8 +1,9 @@
-import styles from '../styles/Layout.module.css';
+import styles from '../styles/Layout.module.css'
 import Sidebar from "./Sidebar"
-import Footer from "./Footer";
+import Footer from "./Footer"
 
 function Layout({children}) {
+
     return (
         <div>
             <Sidebar />
@@ -13,5 +14,6 @@ function Layout({children}) {
         </div>
     )
 }
+
 
 export default Layout;

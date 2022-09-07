@@ -80,6 +80,20 @@ function routes(app) {
     router.get("/users", async (req, res) => {
         const users = await getUsers()
         res.json(users)
+    }),
+    router.get("/login", (req, res) => {
+        const users = [
+            {
+                username: "sammy.uz",
+                password: "sammyadminka"
+            }
+        ]
+        const verify = users.find(user => user.username == req.query.username && user.password == req.query.password)
+        if (verify) {
+            res.redirect(307, '/')
+        } else {
+            res.status(401).send({ message: "unauthorized"})
+        }
     })
 
     return router;
